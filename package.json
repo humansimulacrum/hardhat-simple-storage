@@ -7,6 +7,7 @@
     "test": "test"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^3.1.4",
     "abbrev": "^1.0.9",
     "abort-controller": "^3.0.0",
     "abstract-level": "^1.0.3",
@@ -113,6 +114,7 @@
     "diff": "^5.0.0",
     "difflib": "^0.2.4",
     "dir-glob": "^3.0.1",
+    "dotenv": "^16.0.3",
     "ecc-jsbn": "^0.1.2",
     "elliptic": "^6.5.4",
     "emoji-regex": "^8.0.0",
@@ -311,6 +313,7 @@
     "pify": "^4.0.1",
     "prelude-ls": "^1.1.2",
     "prettier": "^2.8.1",
+    "prettier-plugin-solidity": "^1.1.1",
     "process-nextick-args": "^2.0.1",
     "promise": "^8.3.0",
     "psl": "^1.9.0",
