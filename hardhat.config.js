@@ -2,6 +2,8 @@ require('@nomicfoundation/hardhat-toolbox');
 require('dotenv').config();
 require('@nomiclabs/hardhat-etherscan');
 require('./tasks/block-number');
+require('hardhat-gas-reporter');
+require('solidity-coverage');
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -19,6 +21,13 @@ module.exports = {
 	},
 	etherscan: {
 		apiKey: process.env.ETHERSCAN_API_KEY,
+	},
+	gasReporter: {
+		enabled: true,
+		outputFile: 'gas-report.txt',
+		noColors: true,
+		currency: 'USD',
+		coinmarketcap: process.env.COINMARKETCAP_API_KEY,
 	},
 	solidity: '0.8.8',
 };
