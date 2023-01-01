@@ -10,10 +10,19 @@ async function main() {
 
 	console.log(`Deployed contract to ${simpleStorage.address}`);
 
-	if (network.chainId !== 31337 && process.env.ETHERSCAN_API_KEY) {
+	if (network.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
 		await simpleStorage.deployTransaction.wait(6);
 		await verify(simpleStorage.address, []);
 	}
+
+	const currentValue = await simpleStorage.retrieve();
+	console.log(`Current value is: ${currentValue}`);
+
+	const transactionResponse = await simpleStorage.store(4);
+	await transactionResponse.wait(1);
+
+	const updatedValue = await simpleStorage.retrieve();
+	console.log(`Updated value is: ${updatedValue}`);
 }
 
 async function verify(contractAddress, args) {
